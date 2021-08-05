@@ -1,0 +1,41 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e7ce15cae1d130439f10812c4eb3e33, type: 3}
+  m_Name: Readme
+  m_EditorClassIdentifier: 
+  icon: {fileID: 2800000, guid: 3c1a29ae9e00ceb4a86551c108111d07, type: 3}
+  title: Charles Toolbox
+  sections:
+  - heading: Welcome to my toolbox!
+    text: 'This is an Open Source Toolbox where i add components to use in your game!
+      they are easy to implement and for the most part dynamic! '
+    linkText: 
+    url: 
+  - heading: Importing a component
+    text: To Import Certain components to your project, simply drag and drop the
+      CharlesToolbox.unitypackage on your Project!
+    linkText: 
+    url: 
+  - heading: By Charles Lemaire
+    text: Version 2021.08.05
+    linkText: 
+    url: 
+  - heading: 
+    text: If you have any Question or Requests, contact me directly via Discord! 
+      Add me directly at @Mr. Charles#3056 or Join me with the link below
+    linkText: Link to my Discord
+    url: https://discord.gg/7YqYAgdQVd
+  - heading: Link to this Project
+    text: 
+    linkText: Link to my Github
+    url: https://github.com/TheGreatPixelman/CharlesUnityToolbox
+  loadedLayout: 0
