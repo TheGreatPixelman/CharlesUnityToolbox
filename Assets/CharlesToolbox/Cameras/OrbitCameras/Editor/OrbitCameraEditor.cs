@@ -78,6 +78,20 @@ namespace LemaireCharles.OrbiterCamera
             EditorGUILayout.PrefixLabel("Camera Height");
             orbitCamera.cameraHeight = EditorGUILayout.FloatField(orbitCamera.cameraHeight);
             EditorGUILayout.EndHorizontal();
+
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel("Camera Auto Rotation");
+            orbitCamera.autoLook = EditorGUILayout.Toggle(orbitCamera.autoLook);
+            EditorGUILayout.EndHorizontal();
+
+            EditorGUI.BeginDisabledGroup(orbitCamera.autoLook);
+            EditorGUILayout.BeginHorizontal();
+            EditorGUILayout.PrefixLabel("Camera Rotation");
+            orbitCamera.cameraAngle = EditorGUILayout.FloatField(orbitCamera.cameraAngle);
+            EditorGUILayout.EndHorizontal();
+            EditorGUI.EndDisabledGroup();
+
+
         }
 
         void ShowOrbiterDetails()

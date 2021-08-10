@@ -23,6 +23,8 @@ namespace LemaireCharles.OrbiterCamera
         public float degreePerSecond;
         public float cameraDistance;
         public float cameraHeight;
+        public float cameraAngle;
+        public bool autoLook;
         public Camera camera;
 
 
@@ -39,7 +41,7 @@ namespace LemaireCharles.OrbiterCamera
         void Start()
         {
             if (CheckIfCameraIsReferenced())
-                camera.transform.localPosition = new Vector3(0, cameraHeight, cameraDistance);
+                camera.transform.localPosition = new Vector3(0, cameraHeight, -cameraDistance);
         }
 
         // Update is called once per frame
@@ -213,8 +215,17 @@ namespace LemaireCharles.OrbiterCamera
 
         void MoveCamera()
         {
-            camera.transform.localPosition = Vector3.Lerp(camera.transform.localPosition, Vector3.forward * cameraDistance + Vector3.up * cameraHeight, Time.fixedDeltaTime);
-            camera.transform.LookAt(transform);
+            camera.transform.localPosition = Vector3.Lerp(camera.transform.localPosition, Vector3.forward * -cameraDistance + Vector3.up * cameraHeight, Time.fixedDeltaTime);
+
+            if (autoLook)
+            {
+                camera.transform.LookAt(transform);
+            }
+            else
+            {
+                camera.transform.localRotation = Quaternion.Lerp(camera.transform.localRotation, Quaternion.Euler(cameraAngle, 0, 0), Time.fixedDeltaTime);
+            }
+            
         }
 
         void MoveTowardsTarget()
